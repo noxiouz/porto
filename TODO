@@ -1,3 +1,23 @@
+* Tests
+  - working tests for non-Yandex environment
+  - portoctl tests
+  - Python API tests
+  - Travis builds
+  - tests for complex container hierarchies
+* API
+  - separate C++ API
+  - add contrainer-trees functions
+  - unification of C++ and Python APIs
+* Internals
+  - add WhoAmI? call
+  - remove loop support
+* Image building
+  - systemd
+  - sandbox
+  - portoctl build <layer>
+  - ? portoctl build <image>
+
+--------------------------------------------------------------------------------
 - ? portoctl resolve paths
 - return EAGAIN from destroy/etc when can't wait for freezer (or remove freezer timeout altogether)
 - PORTO_NAME - support namespaces
