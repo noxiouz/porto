@@ -1,3 +1,58 @@
+yandex-porto (2.4) precise; urgency=low
+
+  * selftest: fix tests after supporting float cpu limit and guarantee
+  * container: allow setting float cpu limit and guarantee
+  * container: make GetChildrenSum() and ValidHierarchicalProperty() templates
+  * value: introduce TDoubleValue
+  * util: introduce StringToDouble()
+
+  * porto: do not send second response from wait timeout
+
+  * selftest: output __FILE__ instead of __func__ on error
+  * selftest: don't use prlimit binary in tests
+  * selftest: add memory.limit_in_bytes of root cgroup on modern kernels
+  * unix: Popen() shouldn't report sucess if process quit with error
+  * selftest: introduce kernel features infrastructure
+  * selftest: fix ShouldHaveValidProperties() on non-yandex kernels
+
+  * portoctl: print warning if pid is unknown at enter
+  * portoctl: update help for portoctl enter
+  * porto: add property "dirty_limit"
+  * test/perf: double creation time
+  * container: never ignore exit events
+  * scripts/mkimg: start os container with virt_mode=os
+  * porto: at restore sync all container cgroups for all tasks with freezer
+  * porto: start portoinit for isolated application containers
+  * porto: use TUnixSocket for communication with starting task
+  * util/unix: TUnixSocket
+  * porto: cleanup erorr handling in starting sequence
+  * porto: convert TTaskEnv into mutable unique_ptr
+
+  * test: fix race between delete veth0 and delete veth1
+  * test: ignore init task in isolated container
+  * test: fix races in waiting process exit
+
+  * porto: add "--container $name" into portoinit commandline
+  * porto: rename portod-meta-root into portoinit
+  * porto: merge meta-root and waiter fd for fexecve
+  * porto: use VPid only for triple-fork mode
+  * container: refactor initialization of supplementary groups
+
+  * C++ API: finish separation of C++ API
+  * C++ API: move error.hpp/cpp and protobuf.hpp/cpp to C++ API
+  * C++ API: remove dependency to cred.hpp from protobuf.hpp/cpp
+  * C++ API: don't use rpc.hpp in libporto
+  * C++ API: introduce TPortoAPIImpl
+  * C++ API: cosmetic changes (add std::, etc)
+
+  * docs: fix some grammar errors
+
+  * portoctl: fix Ctrl-C in portoctl exec command
+  * portotop: increase indent in container tree
+  * property: human friendly message for cpu limit/guarantee out-of-range error
+
+ -- Roman Gushchin <klamm@yandex-team.ru>  Thu, 24 Sep 2015 17:52:32 +0300
+
 yandex-porto (2.3.2) precise; urgency=low
 
   * move sources into src
