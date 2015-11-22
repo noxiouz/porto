@@ -489,7 +489,7 @@ class Connection(object):
     def Wait(self, containers, timeout=None):
         return self.rpc.Wait(containers, timeout)
 
-    def CreateVolume(self, path=None, layers=[], **properties):
+    def CreateVolume(self, path=None, layers=None, **properties):
         if layers:
             layers = [ l.name if isinstance(l, Layer) else l for l in layers ]
             properties['layers'] = ';'.join(layers);
@@ -524,7 +524,7 @@ class Connection(object):
         return Layer(self.rpc, name)
 
     def FindLayer(self, layer):
-        if not layer in self.rpc.ListLayers():
+        if layer not in self.rpc.ListLayers():
             raise exceptions.LayerNotFound("layer `%s` not found" % layer)
         return Layer(self.rpc, layer)
 
